@@ -25,7 +25,7 @@ Start a build in Jenkins using a Slack Command
 ### 1. Setup Slack integrations
 
 - Create a new "Slash Command"
-  - Name command `/jenkins`
+  - Name command `/jenkins` (or whatever you want)
   - Set the URL to the url of your Heroku instance (created in [step 3](#3-spin-up-heroku-instance))
   - Method should be POST
   - Label should be 'Jenkins' or whatevs
@@ -37,7 +37,7 @@ Start a build in Jenkins using a Slack Command
 
 - Required environment variables
  - `SLACK_TOKEN` - token from your "Slash Command"
- - `JENKINS_URL` - URL to your Heroku instnace
+ - `JENKINS_URL` - URL to your Jenkins instnace
  - `JENKINS_TOKEN` - API token of your user in Jenkins
    - The API token is available in your personal configuration page. Click your name on the top right corner on every page, then click "Configure" to see your API token. (The URL $root/me/configure is a good shortcut.) You can also change your API token from here.
 - Optional environment variables
@@ -45,7 +45,7 @@ Start a build in Jenkins using a Slack Command
   
 ### 3. Spin up Heroku instance
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/joshdholtz/jenkins-slack-command)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/tracstarr/jenkins-slack-command)
   
 ### 4. Execute command in Slack
 

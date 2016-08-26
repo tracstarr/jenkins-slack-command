@@ -23,6 +23,8 @@ post '/' do
   # Split command text - job
   job = text_parts[0]
 
+  puts "Job: #{job}"
+  
   # Split command text - parameters
   parameters = []
   if text_parts.size > 1
@@ -35,11 +37,13 @@ post '/' do
 
   # Jenkins url
   jenkins_job_url = "#{jenkins_url}/job/#{job}"
+  puts "Job url: #{jenkins_job_url}"
 
   # Get next jenkins job build number
   resp = RestClient.get "#{jenkins_job_url}/api/json"
   resp_json = JSON.parse( resp.body )
   next_build_number = resp_json['nextBuildNumber']
+  puts "Next build number: #{next_build_number}"
 
   # Make jenkins request
   json = JSON.generate( {:parameter => parameters} )
